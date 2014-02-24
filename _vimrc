@@ -46,7 +46,7 @@ set foldmethod=marker
 set tags=./tags,tags
 set tags+=../tags,../../tags,../../../tags,../../../../tags,../../../../../tags,../../../../../../tags,../../../../../../../tags
 
-autocmd FileType make setlocal noexpandtab "Makefile¿¡¼­´Â tab»ç¿ë
+autocmd FileType make setlocal noexpandtab "Makefileì—ì„œëŠ” tabì‚¬ìš©
 
 map <F1> K 
 map <F2> :w!<CR> 
@@ -56,7 +56,7 @@ map <F4> :TlistToggle<CR>
 map <F5> :BufExplorer<CR>
 map <F6> <C-@>
 "w 
-" ¼Ò½ºÄÚµå ÄÚµù/ºĞ¼®¿¡ µµ¿òÀÌ µÇ´Â ±â´É 
+" ì†ŒìŠ¤ì½”ë“œ ì½”ë”©/ë¶„ì„ì— ë„ì›€ì´ ë˜ëŠ” ê¸°ëŠ¥ 
 map <F7> <C-\>
 map <F8> [i 
 map <F9> gd 
@@ -76,7 +76,10 @@ map! <MiddleMouse> <ESC>l
 "elseif has('win32') || has ('win64')
 "	set enc=utf-8 "fenc=utf-8
 "endif
-"
+
+set fencs=utf-8,cp949
+
+
 fun! VundleLoaded(bname)
 	return exists("g:bundles") && string(g:bundles) =~ a:bname
 endfun
@@ -88,7 +91,7 @@ if VundleLoaded('vim-fugitive')
 " 	let g:fugitive_stl_showuntrackedfiles = 1
 endif
 
-" Vundle ¼³Á¤ {{{
+" Vundle ì„¤ì • {{{
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -281,7 +284,7 @@ Bundle 'a.vim'
 " }}}
 
 
-" powerline ¼³Á¤ {{{
+" powerline ì„¤ì • {{{
 if VundleLoaded('vim-powerline')
     set laststatus=2   " Always show the statusline
     "set encoding=utf-8 " Necessary to show Unicode glyphs -> fancy symbols -> need custom font
@@ -311,7 +314,7 @@ if VundleLoaded('vim-powerline')
 endif
 " }}}
 
-" Fuzzy Finder ¼³Á¤  {{{
+" Fuzzy Finder ì„¤ì •  {{{
 if VundleLoaded('FuzzyFinder')
     let g:fuf_modesDisable    = []
     let g:fuf_mrufile_maxItem = 400
