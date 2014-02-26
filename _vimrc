@@ -68,30 +68,22 @@ map <F12> 
 map <MiddleMouse> <ESC> 
 map! <MiddleMouse> <ESC>l 
 
+
+
 "------------------------------------
 " additional settings
 
-"if has('unix')
-"	set enc=cp949 fenc=cp949
-"elseif has('win32') || has ('win64')
-"	set enc=utf-8 "fenc=utf-8
-"endif
-
-set fencs=utf-8,cp949
+" encoding
+set fencs=utf-8,cp949,euc-kr
+set enc=cp949
 
 
 fun! VundleLoaded(bname)
 	return exists("g:bundles") && string(g:bundles) =~ a:bname
 endfun
 
-if VundleLoaded('vim-fugitive')
-	let g:fugitive_hide_advice_statusHints = 1
-	let g:fugitive_stl_showdirtystate      = 1
-	let g:fugitive_stl_showstashstate      = 1
-" 	let g:fugitive_stl_showuntrackedfiles = 1
-endif
 
-" Vundle 설정 {{{
+" Vundle/Bundle Plugin {{{
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -133,9 +125,9 @@ filetype plugin indent on     " required
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle commands are not allowed.
-" }}}
+" --- end of original vundle configurations
 
-" Bundle Plugin LIST {{{
+" additional plugins
 " Lib for FuzzyFinder
 Bundle 'L9'
 " file navigation
@@ -183,6 +175,7 @@ Bundle 'bufexplorer.zip'
 "map <leader>l :call ToggleLocationList()<CR> 
 " }}}
 Bundle 'cscope.vim'
+
 " for normal cscope.out
 " Usage {{{
     """""""""""""" My cscope/vim key mappings
@@ -282,6 +275,14 @@ Bundle 'chazy/cscope_maps'
 " :IHN cycles through matches 
 Bundle 'a.vim'
 " }}}
+
+
+if VundleLoaded('vim-fugitive')
+	let g:fugitive_hide_advice_statusHints = 1
+	let g:fugitive_stl_showdirtystate      = 1
+	let g:fugitive_stl_showstashstate      = 1
+" 	let g:fugitive_stl_showuntrackedfiles = 1
+endif
 
 
 " powerline 설정 {{{
