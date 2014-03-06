@@ -150,6 +150,8 @@ Bundle 'OmniCppComplete'
 Bundle 'AutoComplPop'
 " history buffer,, :BufExplorer<F5>
 Bundle 'bufexplorer.zip'
+" Doxygen template,, :Dox, DoxAuthor, DoxBlock
+Bundle 'DoxygenToolkit.vim'
 
 " make cscope db and add it, db is located at ~\.cscope.vim\
 " :CscopeGen [path_to_the_folder]
