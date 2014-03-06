@@ -27,7 +27,7 @@ function MyDiff()
   if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
   let arg3 = v:fname_out
   if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  "if &sh =~ '\<cmd'    " Workaround for gvim74 bug. This line(signle quotes) is actually correct.
+  "if &sh =~ '\<cmd'    " Workaround for gvim74 bug. This line(single quotes) is actually correct.
   if &sh =~ "\<cmd"
     silent execute '!""C:\Program Files\Vim\vim74\diff" ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . '"'
   else
