@@ -1,0 +1,29 @@
+! Author : Je-sun Kim (milko@capp.snu.ac.kr)
+rxvt*background:black
+rxvt*foreground:White
+rxvt*color0: #000000
+rxvt*color1: #993333
+rxvt*color2: #339933
+rxvt*color3: #999933
+rxvt*color4: #333399
+rxvt*color5: #993399
+rxvt*color6: #339999
+rxvt*color7: #CCCCCC
+rxvt*color8: #666666
+rxvt*color9: #FF9999
+rxvt*color10:#99FF99
+rxvt*color11:#FFFF99
+rxvt*color12:#9999FF
+rxvt*color13:#FF99FF
+rxvt*color14:#99FFFF
+rxvt*color15:#FFFFFF
+!rxvt*font:-b&h-lucidatypewriter-medium-r-normal-13-*-100-*-*-m-*-iso8859-1
+!rxvt*scrollBar_right:true
+!rxvt*saveLines:1024
+!rxvt*lineSpace:3
+!rxvt*geometry:110x55
+!rxvt*loginshell:true
+!rxvt*visualBell:true
+!rxvt*multichar_encoding:kr
+!rxvt*mfont:-hanyang-kodig-medium-r-normal-*-13-*-*-*-*-*-ksc5601.1987-0
+!rxvt*multibyte_cursor:true
