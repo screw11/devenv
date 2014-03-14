@@ -5,16 +5,19 @@ behave mswin
 
 set bdir=c:\vim_backup
 
-function InsertTabWrapper() 
-      let col = col('.') - 1 
-      if !col || getline('.')[col - 1] !~ '\k' 
-          return "\<tab>" 
-      else 
-          return "\<c-p>" 
-      endif 
-endfunction 
-
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+"---- ST lab setting
+"function InsertTabWrapper() 
+"      let col = col('.') - 1 
+"      if !col || getline('.')[col - 1] !~ '\k' 
+"          return "\<tab>" 
+"      else 
+"          return "\<c-p>" 
+"      endif 
+"endfunction 
+"
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+set fileformat=unix
+"----
 
 set diffexpr=MyDiff()
 function MyDiff()
