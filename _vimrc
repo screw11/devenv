@@ -404,9 +404,11 @@ endif
 " NO relation with cscope.vim
 if has("cscope")
 
-    if filereadable("./cscope.out")
-            cs add ./cscope.out . -C
-    elseif filereadable("../cscope.out")
+    "conflict with cscope_maps
+    "if filereadable("./cscope.out")
+    "        cs add ./cscope.out . -C
+    "elseif filereadable("../cscope.out")
+    if filereadable("../cscope.out")
             cs add ../cscope.out . -C
     elseif filereadable("../../cscope.out")
             cs add ../../cscope.out . -C
@@ -414,6 +416,8 @@ if has("cscope")
             cs add ../../../cscope.out . -C
     elseif filereadable("../../../../cscope.out")
             cs add ../../../../cscope.out . -C
+    elseif filereadable("../../../../../cscope.out")
+            cs add ../../../../../cscope.out . -C
     endif
 
     if $CSCOPE_DB != ""
