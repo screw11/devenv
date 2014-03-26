@@ -14,6 +14,7 @@ set backup backupdir=$HOME/.backupdir
 "endfunction 
 "
 "inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+set sts=4 noet
 set fileformat=unix
 "----
 

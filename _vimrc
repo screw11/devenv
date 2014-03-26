@@ -16,6 +16,7 @@ set bdir=c:\vim_backup
 "endfunction 
 "
 "inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+set sts=4 noet
 set fileformat=unix
 "----
 
