@@ -19,6 +19,23 @@ set bdir=c:\vim_backup
 set sts=4 noet
 set fileformat=unix
 "----
+" encoding
+set fencs=utf-8,cp949,euc-kr
+set enc=cp949
+
+set lines=44 columns=100
+"set expandtab
+set tabstop=4
+set shiftwidth=4
+set foldmethod=marker
+set tags=./tags,tags
+set tags+=../tags,../../tags,../../../tags,../../../../tags,../../../../../tags,../../../../../../tags,../../../../../../../tags
+autocmd FileType make setlocal noexpandtab "Makefile에서는 tab사용
+
+:colorscheme torte
+:se nu
+
+
 
 set diffexpr=MyDiff()
 function MyDiff()
@@ -40,18 +57,6 @@ function MyDiff()
 endfunction
 
 
-:colorscheme torte
-:se nu
-
-set lines=44 columns=100
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set foldmethod=marker
-set tags=./tags,tags
-set tags+=../tags,../../tags,../../../tags,../../../../tags,../../../../../tags,../../../../../../tags,../../../../../../../tags
-
-autocmd FileType make setlocal noexpandtab "Makefile에서는 tab사용
 
 map <F1> K 
 map <F2> :w!<CR> 
@@ -77,11 +82,6 @@ map! <MiddleMouse> <ESC>l
 
 "------------------------------------
 " additional settings
-
-" encoding
-set fencs=utf-8,cp949,euc-kr
-set enc=cp949
-
 
 fun! VundleLoaded(bname)
 	return exists("g:bundles") && string(g:bundles) =~ a:bname
