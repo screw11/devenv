@@ -17,21 +17,24 @@ set backup backupdir=$HOME/.backupdir
 set sts=4 noet
 set fileformat=unix
 "----
-
-
-:colorscheme torte
-:syntax on
-:se nu
+" encoding
+set fencs=utf-8,cp949,euc-kr
+set enc=cp949
 
 "set lines=44 columns=100
-set expandtab
+"set expandtab
 set tabstop=4
 set shiftwidth=4
 set foldmethod=marker
 set tags=./tags,tags
 set tags+=../tags,../../tags,../../../tags,../../../../tags,../../../../../tags,../../../../../../tags,../../../../../../../tags
-
 autocmd FileType make setlocal noexpandtab "Makefile에서는 tab사용
+
+:colorscheme torte
+:syntax on
+:se nu
+
+
 
 map <F1> K 
 map <F2> :w!<CR> 
@@ -58,11 +61,6 @@ nnoremap <leader>gr :grep <cword> ./* <CR>:cw<CR>
 
 "------------------------------------
 " additional settings
-
-" encoding
-set fencs=utf-8,cp949,euc-kr
-set enc=cp949
-
 
 fun! VundleLoaded(bname)
 	return exists("g:bundles") && string(g:bundles) =~ a:bname
