@@ -16,29 +16,6 @@ set bdir=c:\vim_backup
 "endfunction 
 "
 "inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-set ts=4
-set sw=4
-set sts=4
-set noet
-"set expandtab
-set fileformat=unix
-"----
-" encoding
-set fencs=utf-8,cp949,euc-kr
-set enc=cp949
-
-set lines=44 columns=100
-"set expandtab
-set tabstop=4
-set shiftwidth=4
-set foldmethod=marker
-set tags=./tags,tags
-set tags+=../tags,../../tags,../../../tags,../../../../tags,../../../../../tags,../../../../../../tags,../../../../../../../tags
-autocmd FileType make setlocal noexpandtab "Makefile에서는 tab사용
-
-:colorscheme torte
-:se nu
-
 
 
 set diffexpr=MyDiff()
@@ -61,17 +38,26 @@ function MyDiff()
 endfunction
 
 
-:colorscheme torte
-:se nu
-
-set tabstop=4
-set shiftwidth=4
+set ts=4
+set sw=4
+set sts=4
+set noet
+"set expandtab
 set lines=44 columns=120
+autocmd FileType make setlocal noexpandtab "Makefile에서는 tab사용
 set foldmethod=marker
 set tags=./tags,tags
 set tags+=../tags,../../tags,../../../tags,../../../../tags,../../../../../tags,../../../../../../tags,../../../../../../../tags
 
-autocmd FileType make setlocal noexpandtab "Makefile에서는 tab사용
+
+" encoding
+set fileformat=unix
+set fencs=utf-8,cp949,euc-kr
+set enc=cp949
+
+
+:colorscheme torte
+:se nu
 
 
 map <F1> K 
