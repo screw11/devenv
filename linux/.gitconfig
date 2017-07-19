@@ -1,0 +1,41 @@
+[user]
+	name = Juhyun Kim
+	email = harry.jhkim@sk.com
+
+[alias]
+    ci = commit
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    cp = cherry-pick
+    cl = clone
+
+    #log 관련된 alias입니다.
+    # 커밋에 어떤 내용이 변경되었는지를 보여주는 alias
+    fl = log -u
+    #lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(blue)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    lg = !git lg1
+
+    # 커밋 로그를 상대적인 시간으로 이쁘게 라인으로 보여주는 alias
+    lrd = log --pretty=format:%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --date=relative
+    
+    # 커밋 로그에서 어떤 파일들이 추가되거나 삭제, 변경되었는지를 상세하게 보여주는 alias
+    ll = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn] --decorate --numstat
+    
+    # 파일 변경 관련한 alias입니다.
+    # 변경 내역에 제외하고자 하는 alias
+    assume = update-index --assume-unchanged
+    
+    # 변경 내역에 다시 추가하고자 하는 alias
+    unassume = update-index --no-assume-unchanged
+    
+    # 변경 내역에서 제외된 파일을 보고자 하는 alias
+    assumels = git ls-files -v | grep '^[[:lower:]]'
+
+[branch]
+	autosetuprebase = always
+[gc]
+	autoDetach = false
