@@ -53,6 +53,7 @@ map <F12> 
 map <MiddleMouse> <ESC> 
 map! <MiddleMouse> <ESC>l 
 
+nnoremap <leader>gr :grep <cword> ./* <CR>:cw<CR>
 
 
 "------------------------------------

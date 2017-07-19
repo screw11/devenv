@@ -16,7 +16,11 @@ set bdir=c:\vim_backup
 "endfunction 
 "
 "inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-set sts=4 noet
+set ts=4
+set sw=4
+set sts=4
+set noet
+"set expandtab
 set fileformat=unix
 "----
 
@@ -33,9 +37,9 @@ function MyDiff()
   if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
   "if &sh =~ '\<cmd'    " Workaround for gvim74 bug. This line(single quotes) is actually correct.
   if &sh =~ "\<cmd"
-    silent execute '!""C:\Program Files\Vim\vim74\diff" ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . '"'
+    silent execute '!""C:\Program Files (x86)\Vim\vim74\diff" ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . '"'
   else
-    silent execute '!C:\Program" Files\Vim\vim74\diff" ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+    silent execute '!C:\Program" Files (x86)\Vim\vim74\diff" ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
   endif
 endfunction
 
@@ -43,10 +47,9 @@ endfunction
 :colorscheme torte
 :se nu
 
-set lines=44 columns=100
-set expandtab
 set tabstop=4
 set shiftwidth=4
+set lines=44 columns=120
 set foldmethod=marker
 set tags=./tags,tags
 set tags+=../tags,../../tags,../../../tags,../../../../tags,../../../../../tags,../../../../../../tags,../../../../../../../tags
@@ -73,6 +76,7 @@ map <F12> 
 map <MiddleMouse> <ESC> 
 map! <MiddleMouse> <ESC>l 
 
+nnoremap <leader>gr :grep <cword> ./* <CR>:cw<CR>
 
 
 "------------------------------------
@@ -156,6 +160,8 @@ Bundle 'AutoComplPop'
 Bundle 'bufexplorer.zip'
 " Doxygen template,, :Dox, DoxAuthor, DoxBlock
 Bundle 'DoxygenToolkit.vim'
+" EasyGrep : need to install
+"Bundle 'easygrep.vim'
 
 " make cscope db and add it, db is located at ~\.cscope.vim\
 " :CscopeGen [path_to_the_folder]
